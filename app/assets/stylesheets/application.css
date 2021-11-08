@@ -23,7 +23,7 @@
   .tooltips {
     position   : absolute;
     display: none;
-    background-color: rgba(255, 26, 26);
+    background-color: rgb(255, 26, 26);
     width:auto;
   }
   .tooltips:after{
