@@ -1,0 +1,38 @@
+<h1>アカウント管理 - 参照</h1>
+
+<h2>アカウント情報</h2>
+
+<label>アカウントID</label>
+<input id="account_id" type="text" value=<%= @account.account_id %> disabled>
+<label>アカウントコード</label>
+<input id="account_code" type="text" value=<%= @account.account_code %> disabled>
+<label>メールアドレス</label>
+<input id="mail_address" type="text" value=<%= @account.mail_address %> disabled>
+
+<label>姓</label>
+<input id="family_name" type="text" value=<%= @account.family_name %> disabled>
+<label>名</label>
+<input id="first_name" type="text" value=<%= @account.first_name %> disabled>
+<label>かな姓</label>
+<input id="kana_family_name" type="text" value=<%= @account.kana_family_name %> disabled>
+<label>かな名</label>
+<input id="kana_first_name" type="text" value=<%= @account.kana_first_name %> disabled>
+<label>生年月日_年</label>
+<input id="birth_year" type="text" value=<%= @account.birth_year %> disabled>
+<label>生年月日_月</label>
+<input id="birth_month" type="text" value=<%= @account.birth_month %> disabled>
+<label>生年月日_日</label>
+<input id="birth_day" type="text" value=<%= @account.birth_day %> disabled>
+<label>有効開始日</label>
+<input id="valid_start_date" type="text" value=<%= @account.valid_start_date %> disabled>
+<label>終了日</label>
+<input id="valid_end_date" type="text" value=<%= @account.valid_end_date %> disabled>
+<label>有効フラグ</label>
+<input id="is_valid" type="text" value=<%= @account.is_valid %> disabled>
+<label>メモ</label>
+<input id="memo" type="text" value=<%= @account.memo %> disabled>
+
+
+<%=link_to(accounts_path) do %>
+    <button>一覧に戻る</button>
+<%end%>

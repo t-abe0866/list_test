@@ -1,0 +1,44 @@
+<h1>メッセージ一覧</h1>
+
+<%=link_to(new_account_path) do %>
+    <button>新規登録</button>
+<%end%>
+
+<%= form_with(model: @account, local: true) do |f| %>
+    <%= f.text_field :account_id %>
+    <%= f.submit '検索' %>
+<% end %>
+
+<%= paginate @accounts %>
+
+<%=link_to(accounts_url(display_result: 10)) do %>
+    <button>10件表示</button>
+<%end%>
+
+<%=link_to(accounts_url(display_result: 50)) do %>
+    <button>50件表示</button>
+<%end%>
+
+<table border=”1″>
+    <tr>
+        <th>アカウントID<%= sort_asc("account_id")%><%= sort_desc("account_id")%></th>
+        <th>アカウントコード<%= sort_asc("account_code")%><%= sort_desc("account_code")%></th>
+        <th>メールアドレス<%= sort_asc("mail_address")%><%= sort_desc("mail_address")%></th>
+        <th>メモ<%= sort_asc("memo")%><%= sort_desc("memo")%></th>
+        <th>作成日<%= sort_asc("created_date")%><%= sort_desc("created_date")%></th>
+        <th>最終更新日<%= sort_asc("last_updated")%><%= sort_desc("last_updated")%></th>
+    </tr>
+    <% @accounts.each do |account| %>
+        <tr>
+            <td class="account_id"><%= link_to account.account_id, account %><span class="tooltips"><%= account.memo %></span></td>
+            <td><%= account.account_code %></td>
+            <td><%= account.mail_address %></td>
+            <td><%= account.memo %></td>
+            <td><%= account.created_date %></td>
+            <td><%= account.last_updated %></td>
+        </tr>
+    <% end %>
+</table>
+
+
+<%= paginate @accounts %>
