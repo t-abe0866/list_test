@@ -1,8 +1,6 @@
 <h1>アカウント管理 - 新規登録</h1>
 
 <%= form_with(model: @account, local: true) do |f| %>
-    <%= f.label :account_id, 'アカウントID' %>
-    <%= f.text_field :account_id %>
     <%= f.label :account_code, 'アカウントコード' %>
     <%= f.text_field :account_code %>
     <%= f.label :mail_address, 'メールアドレス' %>
@@ -26,7 +24,7 @@
     <%= f.label :valid_end_date, '終了日' %>
     <%= f.text_field :valid_end_date %>
     <%= f.label :is_valid, '有効フラグ' %>
-    <%= f.text_field :is_valid %>
+    <%= f.check_box :is_valid %>
     <%= f.label :memo, 'メモ' %>
     <%= f.text_field :memo %>
     <%= f.submit '投稿' %>

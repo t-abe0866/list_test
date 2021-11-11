@@ -2,37 +2,41 @@
 
 <h2>アカウント情報</h2>
 
-<label>アカウントID</label>
-<input id="account_id" type="text" value=<%= @account.account_id %> disabled>
-<label>アカウントコード</label>
-<input id="account_code" type="text" value=<%= @account.account_code %> disabled>
-<label>メールアドレス</label>
-<input id="mail_address" type="text" value=<%= @account.mail_address %> disabled>
-
-<label>姓</label>
-<input id="family_name" type="text" value=<%= @account.family_name %> disabled>
-<label>名</label>
-<input id="first_name" type="text" value=<%= @account.first_name %> disabled>
-<label>かな姓</label>
-<input id="kana_family_name" type="text" value=<%= @account.kana_family_name %> disabled>
-<label>かな名</label>
-<input id="kana_first_name" type="text" value=<%= @account.kana_first_name %> disabled>
-<label>生年月日_年</label>
-<input id="birth_year" type="text" value=<%= @account.birth_year %> disabled>
-<label>生年月日_月</label>
-<input id="birth_month" type="text" value=<%= @account.birth_month %> disabled>
-<label>生年月日_日</label>
-<input id="birth_day" type="text" value=<%= @account.birth_day %> disabled>
-<label>有効開始日</label>
-<input id="valid_start_date" type="text" value=<%= @account.valid_start_date %> disabled>
-<label>終了日</label>
-<input id="valid_end_date" type="text" value=<%= @account.valid_end_date %> disabled>
-<label>有効フラグ</label>
-<input id="is_valid" type="text" value=<%= @account.is_valid %> disabled>
-<label>メモ</label>
-<input id="memo" type="text" value=<%= @account.memo %> disabled>
-
+<%= form_with(model: @account, local: true) do |f| %>
+    <%= f.label :account_id, 'アカウントID' %>
+    <%= f.text_field :account_id, value: @account.account_id, disabled: true %>
+    <%= f.label :account_code, 'アカウントコード' %>
+    <%= f.text_field :account_code, value: @account.account_code, disabled: true %>
+    <%= f.label :mail_address, 'メールアドレス' %>
+    <%= f.text_field :mail_address, value: @account.mail_address, disabled: true %>
+    <%= f.label :family_name, '姓' %>
+    <%= f.text_field :family_name, value: @account.family_name, disabled: true %>
+    <%= f.label :first_name, '名' %>
+    <%= f.text_field :first_name, value: @account.first_name, disabled: true %>
+    <%= f.label :kana_family_name, 'かな姓' %>
+    <%= f.text_field :kana_family_name, value: @account.kana_family_name, disabled: true %>
+    <%= f.label :kana_first_name, 'かな名' %>
+    <%= f.text_field :kana_first_name, value: @account.kana_first_name, disabled: true %>
+    <%= f.label :birth_year, '生年月日_年' %>
+    <%= f.text_field :birth_year, value: @account.birth_year, disabled: true %>
+    <%= f.label :birth_month, '生年月日_月' %>
+    <%= f.text_field :birth_month, value: @account.birth_month, disabled: true %>
+    <%= f.label :birth_day, '生年月日_日' %>
+    <%= f.text_field :birth_day, value: @account.birth_day, disabled: true %>
+    <%= f.label :valid_start_date, '有効開始日' %>
+    <%= f.text_field :valid_start_date, value: @account.valid_start_date, disabled: true %>
+    <%= f.label :valid_end_date, '終了日' %>
+    <%= f.text_field :valid_end_date, value: @account.valid_end_date, disabled: true %>
+    <%= f.label :is_valid, '有効フラグ' %>
+    <%= f.check_box :is_valid, value: @account.is_valid, disabled: true %>
+    <%= f.label :memo, 'メモ' %>
+    <%= f.text_field :memo, value: @account.memo, disabled: true %>
+<% end %>
 
 <%=link_to(accounts_path) do %>
     <button>一覧に戻る</button>
+<%end%>
+
+<%=link_to(edit_account_path) do %>
+    <button>編集</button>
 <%end%>

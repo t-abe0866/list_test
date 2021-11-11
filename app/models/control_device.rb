@@ -1,0 +1,2 @@
+class ControlDevice < ApplicationRecord
+end

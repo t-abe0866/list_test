@@ -67,4 +67,114 @@ Account.create(:account_id => '55', :account_code => 'efc00001', :mail_address =
 
 
 
+ControlDevice.create(:control_device_id => '1', :name => 'a01', :physical_code => 'b01', :memo => 'abc1')
+ControlDevice.create(:control_device_id => '2', :name => 'a02', :physical_code => 'b02', :memo => 'abc2')
+ControlDevice.create(:control_device_id => '3', :name => 'a03', :physical_code => 'b03', :memo => 'abc3')
+ControlDevice.create(:control_device_id => '4', :name => 'a04', :physical_code => 'b04', :memo => 'abc4')
+ControlDevice.create(:control_device_id => '5', :name => 'a05', :physical_code => 'b05', :memo => 'abc5')
+ControlDevice.create(:control_device_id => '6', :name => 'a06', :physical_code => 'b06', :memo => 'abc6')
+ControlDevice.create(:control_device_id => '7', :name => 'a07', :physical_code => 'b07', :memo => 'abc7')
+ControlDevice.create(:control_device_id => '8', :name => 'a08', :physical_code => 'b08', :memo => 'abc8')
+ControlDevice.create(:control_device_id => '9', :name => 'a09', :physical_code => 'b09', :memo => 'abc9')
+ControlDevice.create(:control_device_id => '10', :name => 'a10', :physical_code => 'b10', :memo => 'abc10')
+ControlDevice.create(:control_device_id => '11', :name => 'a11', :physical_code => 'b11', :memo => 'abc11')
+ControlDevice.create(:control_device_id => '12', :name => 'a12', :physical_code => 'b12', :memo => 'abc12')
+ControlDevice.create(:control_device_id => '13', :name => 'a13', :physical_code => 'b13', :memo => 'abc13')
+ControlDevice.create(:control_device_id => '14', :name => 'a14', :physical_code => 'b14', :memo => 'abc14')
+ControlDevice.create(:control_device_id => '15', :name => 'a15', :physical_code => 'b15', :memo => 'abc15')
+ControlDevice.create(:control_device_id => '16', :name => 'a16', :physical_code => 'b16', :memo => 'abc16')
+ControlDevice.create(:control_device_id => '17', :name => 'a17', :physical_code => 'b17', :memo => 'abc17')
+ControlDevice.create(:control_device_id => '18', :name => 'a18', :physical_code => 'b18', :memo => 'abc18')
+ControlDevice.create(:control_device_id => '19', :name => 'a19', :physical_code => 'b19', :memo => 'abc19')
+ControlDevice.create(:control_device_id => '20', :name => 'a20', :physical_code => 'b20', :memo => 'abc20')
+ControlDevice.create(:control_device_id => '21', :name => 'a21', :physical_code => 'b21', :memo => 'abc21')
+ControlDevice.create(:control_device_id => '22', :name => 'a22', :physical_code => 'b22', :memo => 'abc22')
+ControlDevice.create(:control_device_id => '23', :name => 'a23', :physical_code => 'b23', :memo => 'abc23')
+ControlDevice.create(:control_device_id => '24', :name => 'a24', :physical_code => 'b24', :memo => 'abc24')
+ControlDevice.create(:control_device_id => '25', :name => 'a25', :physical_code => 'b25', :memo => 'abc25')
+ControlDevice.create(:control_device_id => '26', :name => 'a26', :physical_code => 'b26', :memo => 'abc26')
+ControlDevice.create(:control_device_id => '27', :name => 'a27', :physical_code => 'b27', :memo => 'abc27')
+ControlDevice.create(:control_device_id => '28', :name => 'a28', :physical_code => 'b28', :memo => 'abc28')
+ControlDevice.create(:control_device_id => '29', :name => 'a29', :physical_code => 'b29', :memo => 'abc29')
+ControlDevice.create(:control_device_id => '30', :name => 'a30', :physical_code => 'b30', :memo => 'abc30')
+ControlDevice.create(:control_device_id => '31', :name => 'a31', :physical_code => 'b31', :memo => 'abc31')
+ControlDevice.create(:control_device_id => '32', :name => 'a32', :physical_code => 'b32', :memo => 'abc32')
+ControlDevice.create(:control_device_id => '33', :name => 'a33', :physical_code => 'b33', :memo => 'abc33')
+ControlDevice.create(:control_device_id => '34', :name => 'a34', :physical_code => 'b34', :memo => 'abc34')
+ControlDevice.create(:control_device_id => '35', :name => 'a35', :physical_code => 'b35', :memo => 'abc35')
+ControlDevice.create(:control_device_id => '36', :name => 'a36', :physical_code => 'b36', :memo => 'abc36')
+ControlDevice.create(:control_device_id => '37', :name => 'a37', :physical_code => 'b37', :memo => 'abc37')
+ControlDevice.create(:control_device_id => '38', :name => 'a38', :physical_code => 'b38', :memo => 'abc38')
+ControlDevice.create(:control_device_id => '39', :name => 'a39', :physical_code => 'b39', :memo => 'abc39')
+ControlDevice.create(:control_device_id => '40', :name => 'a40', :physical_code => 'b40', :memo => 'abc40')
+ControlDevice.create(:control_device_id => '41', :name => 'a41', :physical_code => 'b41', :memo => 'abc41')
+ControlDevice.create(:control_device_id => '42', :name => 'a42', :physical_code => 'b42', :memo => 'abc42')
+ControlDevice.create(:control_device_id => '43', :name => 'a43', :physical_code => 'b43', :memo => 'abc43')
+ControlDevice.create(:control_device_id => '44', :name => 'a44', :physical_code => 'b44', :memo => 'abc44')
+ControlDevice.create(:control_device_id => '45', :name => 'a45', :physical_code => 'b45', :memo => 'abc45')
+ControlDevice.create(:control_device_id => '46', :name => 'a46', :physical_code => 'b46', :memo => 'abc46')
+ControlDevice.create(:control_device_id => '47', :name => 'a47', :physical_code => 'b47', :memo => 'abc47')
+ControlDevice.create(:control_device_id => '48', :name => 'a48', :physical_code => 'b48', :memo => 'abc48')
+ControlDevice.create(:control_device_id => '49', :name => 'a49', :physical_code => 'b49', :memo => 'abc49')
+ControlDevice.create(:control_device_id => '50', :name => 'a50', :physical_code => 'b50', :memo => 'abc50')
+ControlDevice.create(:control_device_id => '51', :name => 'a51', :physical_code => 'b51', :memo => 'abc51')
+ControlDevice.create(:control_device_id => '52', :name => 'a52', :physical_code => 'b52', :memo => 'abc52')
+ControlDevice.create(:control_device_id => '53', :name => 'a53', :physical_code => 'b53', :memo => 'abc53')
+ControlDevice.create(:control_device_id => '54', :name => 'a54', :physical_code => 'b54', :memo => 'abc54')
+ControlDevice.create(:control_device_id => '55', :name => 'a55', :physical_code => 'b55', :memo => 'abc55')
 
+abc1
+abc2
+abc3
+abc4
+abc5
+abc6
+abc7
+abc8
+abc9
+abc10
+abc11
+abc12
+abc13
+abc14
+abc15
+abc16
+abc17
+abc18
+abc19
+abc20
+abc21
+abc22
+abc23
+abc24
+abc25
+abc26
+abc27
+abc28
+abc29
+abc30
+abc31
+abc32
+abc33
+abc34
+abc35
+abc36
+abc37
+abc38
+abc39
+abc40
+abc41
+abc42
+abc43
+abc44
+abc45
+abc46
+abc47
+abc48
+abc49
+abc50
+abc51
+abc52
+abc53
+abc54
+abc55

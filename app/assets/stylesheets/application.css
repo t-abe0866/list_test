@@ -31,3 +31,12 @@
     content: "";
     position: absolute;
   }
+
+  .memo {
+    display:block;
+    width: 180px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  

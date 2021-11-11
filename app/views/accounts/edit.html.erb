@@ -1,0 +1,42 @@
+<h1>アカウント管理 - 編集</h1>
+
+<h2>アカウント情報</h2>
+
+<%= form_with(model: @account, local: true) do |f| %>
+    <%= f.label :account_id, 'アカウントID' %>
+    <%= f.text_field :account_id, value: @account.account_id , readonly: true  %>
+    <%= f.label :account_code, 'アカウントコード' %>
+    <%= f.text_field :account_code, value: @account.account_code%>
+    <%= f.label :mail_address, 'メールアドレス' %>
+    <%= f.text_field :mail_address, value: @account.mail_address%>
+    <%= f.label :family_name, '姓' %>
+    <%= f.text_field :family_name, value: @account.family_name%>
+    <%= f.label :first_name, '名' %>
+    <%= f.text_field :first_name, value: @account.first_name%>
+    <%= f.label :kana_family_name, 'かな姓' %>
+    <%= f.text_field :kana_family_name, value: @account.kana_family_name%>
+    <%= f.label :kana_first_name, 'かな名' %>
+    <%= f.text_field :kana_first_name, value: @account.kana_first_name%>
+    <%= f.label :birth_year, '生年月日_年' %>
+    <%= f.text_field :birth_year, value: @account.birth_year%>
+    <%= f.label :birth_month, '生年月日_月' %>
+    <%= f.text_field :birth_month, value: @account.birth_month%>
+    <%= f.label :birth_day, '生年月日_日' %>
+    <%= f.text_field :birth_day, value: @account.birth_day%>
+    <%= f.label :valid_start_date, '有効開始日' %>
+    <%= f.text_field :valid_start_date, value: @account.valid_start_date%>
+    <%= f.label :valid_end_date, '終了日' %>
+    <%= f.text_field :valid_end_date, value: @account.valid_end_date%>
+    <%= f.label :is_valid, '有効フラグ' %>
+    <%= f.check_box :is_valid, value: @account.is_valid%>
+    <%= f.label :memo, 'メモ' %>
+    <%= f.text_field :memo, value: @account.memo%>
+      <%= f.submit '更新' %>
+<% end %>
+
+<%=link_to(accounts_path) do %>
+    <button>一覧に戻る</button>
+<%end%>
+
+<%= button_to  '削除', @account, method: :delete, data: { confirm: '本当に削除してよろしいですか？',cancel: 'やめる', commit: '削除する'} , title: '削除の確認'%>
+

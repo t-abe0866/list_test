@@ -4,9 +4,9 @@
     <button>新規登録</button>
 <%end%>
 
-<%= form_with(model: @account, local: true) do |f| %>
-    <%= f.text_field :account_id %>
-    <%= f.submit '検索' %>
+<%= form_with url: accounts_url , method: :get, local: true do  |form| %>
+  <%= form.text_field :search %>
+  <%= form.submit '検索' %>
 <% end %>
 
 <%= paginate @accounts %>
@@ -19,26 +19,30 @@
     <button>50件表示</button>
 <%end%>
 
-<table border=”1″>
-    <tr>
-        <th>アカウントID<%= sort_asc("account_id")%><%= sort_desc("account_id")%></th>
-        <th>アカウントコード<%= sort_asc("account_code")%><%= sort_desc("account_code")%></th>
-        <th>メールアドレス<%= sort_asc("mail_address")%><%= sort_desc("mail_address")%></th>
-        <th>メモ<%= sort_asc("memo")%><%= sort_desc("memo")%></th>
-        <th>作成日<%= sort_asc("created_date")%><%= sort_desc("created_date")%></th>
-        <th>最終更新日<%= sort_asc("last_updated")%><%= sort_desc("last_updated")%></th>
-    </tr>
-    <% @accounts.each do |account| %>
-        <tr>
-            <td class="account_id"><%= link_to account.account_id, account %><span class="tooltips"><%= account.memo %></span></td>
-            <td><%= account.account_code %></td>
-            <td><%= account.mail_address %></td>
-            <td><%= account.memo %></td>
-            <td><%= account.created_date %></td>
-            <td><%= account.last_updated %></td>
-        </tr>
-    <% end %>
-</table>
 
+<% if @accounts.empty? %>
+    <p>一致する項目はありませんでした</p>
+<%else%>
+    <table border=”1″>
+        <tr>
+            <th>アカウントID<%= sort_asc("account_id")%><%= sort_desc("account_id")%></th>
+            <th>アカウントコード<%= sort_asc("account_code")%><%= sort_desc("account_code")%></th>
+            <th>メールアドレス<%= sort_asc("mail_address")%><%= sort_desc("mail_address")%></th>
+            <th>メモ<%= sort_asc("memo")%><%= sort_desc("memo")%></th>
+            <th>作成日<%= sort_asc("created_at")%><%= sort_desc("created_at")%></th>
+            <th>最終更新日<%= sort_asc("updated_at")%><%= sort_desc("updated_at")%></th>
+        </tr>
+        <% @accounts.each do |account| %>
+            <tr>
+                <td class="account_id"><%= link_to account.account_id, account %><span class="tooltips"><%= account.memo %></span></td>
+                <td><%= account.account_code %></td>
+                <td><%= account.mail_address %></td>
+                <td class="memo"><%= account.memo %></td>
+                <td><%= account.created_at.to_s(:datetime_jp) %></td>
+                <td><%= account.updated_at.to_s(:datetime_jp) %></td>
+            </tr>
+        <% end %>
+    </table>
+<%end%>
 
 <%= paginate @accounts %>

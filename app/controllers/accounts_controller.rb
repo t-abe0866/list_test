@@ -2,9 +2,6 @@ class AccountsController < ApplicationController
 
     helper_method :sort_column, :sort_direction
 
-    @sort_item = ""
-    @sort_item = ""
-
     def index
         if params[:sort_item]
             @sort_item = params[:sort_item]
@@ -18,22 +15,21 @@ class AccountsController < ApplicationController
             @sort_order = "asc"
         end
 
-        params[:sort_order]
-
         if params[:display_result]
             @display_result = params[:display_result]
         else
             @display_result = 10
         end
-        
-        @accounts = Account.order("#{sort_column} #{sort_direction}")
-                            .order("#{sort_column} #{sort_direction}")
-                            .order("#{sort_column} #{sort_direction}")
-                            .order("#{sort_column} #{sort_direction}")
-                            .order("#{sort_column} #{sort_direction}")
-                            .order("#{sort_column} #{sort_direction}").page(params[:page]).per(@display_result)
+
+        if params[:search]
+            @accounts = Account.order("#{sort_column} #{sort_direction}")
+                                .where('cast(account_id as text) LIKE ? OR account_code LIKE ? OR mail_address LIKE ? OR cast(created_date as text) LIKE ? OR cast(last_updated as text) LIKE ?', 
+                                "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").page(params[:page]).per(@display_result)
+        else
+            @accounts = Account.order("#{sort_column} #{sort_direction}").page(params[:page]).per(@display_result)
+        end
     end
-  
+
     def show
         @account = Account.find(params[:id])
     end
@@ -87,7 +83,7 @@ class AccountsController < ApplicationController
 
     # Strong Parameter
     def account_params
-      params.require(:account).permit(:account_id,:account_code,:mail_address,:family_name,:first_name,:kana_family_name,:kana_first_name,:birth_year,:birth_month,:birth_day,:valid_start_date,:valid_end_date,:is_valid,:memo,:created_date,:last_updated)
+      params.require(:account).permit(:account_id,:account_code,:mail_address,:family_name,:first_name,:kana_family_name,:kana_first_name,:birth_year,:birth_month,:birth_day,:valid_start_date,:valid_end_date,:is_valid,:memo,:created_at,:updated_at)
     end
 
     def sort_direction
