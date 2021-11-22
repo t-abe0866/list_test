@@ -1,0 +1,31 @@
+<h1>アカウント管理 - 新規登録</h1>
+
+<%= flash[:success] %>
+
+<% if @control_device.errors.any? %>
+  <div class = "alert">
+    <ul>
+      <% @control_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with(model: @control_device, local: true) do |f| %>
+    <%= f.label :name, '名称（必須）' %>
+    <%= f.text_field :name %>
+    <%= f.label :physical_code, '制御機器物理コード（必須）' %>
+    <%= f.text_field :physical_code %>
+    <%= f.label :is_gateway, 'ゲートウェイフラグ（必須）' %>
+    <%= f.check_box :is_gateway %>
+    <%= f.label :schema_id, 'スキーマID（必須）' %>
+    <%= f.text_field :schema_id %>
+    <%= f.label :memo, 'メモ' %>
+    <%= f.text_field :memo %>
+    <%= f.submit '登録' , data: { confirm: '本当に登録してよろしいですか？'}%>
+<% end %>
+
+<%=link_to(control_devices_path) do %>
+    <button>一覧に戻る</button>
+<%end%>

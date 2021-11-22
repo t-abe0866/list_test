@@ -1,0 +1,28 @@
+<h1>制御機器管理 - 参照</h1>
+
+<%= flash[:success] %>
+
+<h2>制御機器情報</h2>
+
+<%= form_with(model: @control_device, local: true) do |f| %>
+    <%= f.label :control_device_id, '制御機器ID（必須）' %>
+    <%= f.text_field :control_device_id, value: @control_device.control_device_id, disabled: true %>
+    <%= f.label :name, '名称（必須）' %>
+    <%= f.text_field :name, value: @control_device.name , disabled: true  %>
+    <%= f.label :physical_code, '制御機器物理コード（必須）' %>
+    <%= f.text_field :physical_code, value: @control_device.physical_code, disabled: true%>
+    <%= f.label :is_gateway, 'ゲートウェイフラグ（必須）' %>
+    <%= f.check_box :is_gateway, value: @control_device.is_gateway, disabled: true%>
+    <%= f.label :schema_id, 'スキーマID（必須）' %>
+    <%= f.text_field :schema_id, value: @control_device.schema_id, disabled: true%>
+    <%= f.label :memo, 'メモ' %>
+    <%= f.text_field :memo, value: @control_device.memo, disabled: true%>
+<% end %>
+
+<%=link_to(control_devices_path) do %>
+    <button>一覧に戻る</button>
+<%end%>
+
+<%=link_to(edit_control_device_path) do %>
+    <button>編集</button>
+<%end%>

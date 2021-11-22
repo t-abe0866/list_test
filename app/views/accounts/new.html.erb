@@ -1,33 +1,52 @@
 <h1>アカウント管理 - 新規登録</h1>
 
+<%= flash[:success] %>
+
+<% if @account.errors.any? %>
+  <div class = "alert">
+    <ul>
+      <% @account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with(model: @account, local: true) do |f| %>
-    <%= f.label :account_code, 'アカウントコード' %>
+    <%= f.label :account_code, 'アカウントコード（必須）' %>
     <%= f.text_field :account_code %>
-    <%= f.label :mail_address, 'メールアドレス' %>
+    <%= f.label :mail_address, 'メールアドレス（必須）' %>
     <%= f.text_field :mail_address %>
-    <%= f.label :family_name, '姓' %>
+    <%= f.label :password, 'パスワード（必須）' %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation, 'パスワード確認（必須）' %>
+    <%= f.password_field :password_confirmation%>
+    <%= f.label :family_name, '姓（必須）' %>
     <%= f.text_field :family_name %>
-    <%= f.label :first_name, '名' %>
+    <%= f.label :first_name, '名（必須）' %>
     <%= f.text_field :first_name %>
-    <%= f.label :kana_family_name, 'かな姓' %>
+    <%= f.label :kana_family_name, 'かな姓（必須）' %>
     <%= f.text_field :kana_family_name %>
-    <%= f.label :kana_first_name, 'かな名' %>
+    <%= f.label :kana_first_name, 'かな名（必須）' %>
     <%= f.text_field :kana_first_name %>
-    <%= f.label :birth_year, '生年月日_年' %>
-    <%= f.text_field :birth_year %>
-    <%= f.label :birth_month, '生年月日_月' %>
-    <%= f.text_field :birth_month %>
-    <%= f.label :birth_day, '生年月日_日' %>
-    <%= f.text_field :birth_day %>
-    <%= f.label :valid_start_date, '有効開始日' %>
+    <%= f.label :birth, '生年月日（必須）' %>
+    <%= f.date_select(
+          :birth,
+          start_year: 1900,
+          end_year: (Time.now.year),
+          default: Date.new(2000, 1, 1)) %>
+    <%= f.label :valid_start_date, '有効開始日（必須）' %>
     <%= f.text_field :valid_start_date %>
     <%= f.label :valid_end_date, '終了日' %>
     <%= f.text_field :valid_end_date %>
-    <%= f.label :is_valid, '有効フラグ' %>
+    <%= f.label :is_valid, '有効フラグ（必須）' %>
     <%= f.check_box :is_valid %>
     <%= f.label :memo, 'メモ' %>
     <%= f.text_field :memo %>
-    <%= f.submit '投稿' %>
+    <%= f.submit '登録' , data: { confirm: '本当に登録してよろしいですか？'}%>
 <% end %>
 
-<%= link_to '一覧に戻る', accounts_path %>
+<%=link_to(accounts_path) do %>
+    <button>一覧に戻る</button>
+<%end%>
+

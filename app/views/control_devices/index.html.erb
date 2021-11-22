@@ -1,11 +1,11 @@
-<h1>制御機器 - 一覧</h1>
+<h1>制御機器管理 - 一覧</h1>
 
-<%=link_to(control_devices_url) do %>
+<%=link_to(new_control_device_path) do %>
     <button>新規登録</button>
 <%end%>
 
 <%= form_with url: control_devices_url , method: :get, local: true do  |form| %>
-  <%= form.text_field :search %>
+  <%= form.text_field :search, autofocus: true, maxlength: "18"  %>
   <%= form.submit '検索' %>
 <% end %>
 
@@ -18,27 +18,31 @@
 <%=link_to(control_devices_url(display_result: 50)) do %>
     <button>50件表示</button>
 <%end%>
-
+ 
 
 <% if @control_devices.empty? %>
-    <p>一致する項目はありませんでした</p>
+    <p>"検索ワード"に一致するものはありませんでした</p>
 <%else%>
     <table border=”1″>
         <tr>
             <th>制御機器ID<%= sort_asc("control_device_id")%><%= sort_desc("control_device_id")%></th>
-            <th>制御機器名<%= sort_asc("name")%><%= sort_desc("name")%></th>
+            <th>名称<%= sort_asc("name")%><%= sort_desc("name")%></th>
             <th>制御機器物理コード<%= sort_asc("physical_code")%><%= sort_desc("physical_code")%></th>
-            <th>備考<%= sort_asc("memo")%><%= sort_desc("memo")%></th>
+            <th>メモ<%= sort_asc("memo")%><%= sort_desc("memo")%></th>
         </tr>
         <% @control_devices.each do |control_device| %>
             <tr>
-                <td class="control_device_id"><%= control_device.control_device_id %></span></td>
+                <td><%= link_to control_device.control_device_id, control_device %></td>
                 <td><%= control_device.name %></td>
                 <td><%= control_device.physical_code %></td>
-                <td class="memo"><%= control_device.memo %></td>
+                <td><%= control_device.memo %></td>
             </tr>
         <% end %>
     </table>
 <%end%>
 
 <%= paginate @control_devices %>
+
+<%=link_to(control_devices_url(format: :csv)) do %>
+    <button>CSVダウンロード</button>
+<%end%>

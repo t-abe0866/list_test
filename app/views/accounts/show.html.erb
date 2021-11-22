@@ -9,6 +9,8 @@
     <%= f.text_field :account_code, value: @account.account_code, disabled: true %>
     <%= f.label :mail_address, 'メールアドレス' %>
     <%= f.text_field :mail_address, value: @account.mail_address, disabled: true %>
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password, disabled: true %>
     <%= f.label :family_name, '姓' %>
     <%= f.text_field :family_name, value: @account.family_name, disabled: true %>
     <%= f.label :first_name, '名' %>
@@ -17,12 +19,8 @@
     <%= f.text_field :kana_family_name, value: @account.kana_family_name, disabled: true %>
     <%= f.label :kana_first_name, 'かな名' %>
     <%= f.text_field :kana_first_name, value: @account.kana_first_name, disabled: true %>
-    <%= f.label :birth_year, '生年月日_年' %>
-    <%= f.text_field :birth_year, value: @account.birth_year, disabled: true %>
-    <%= f.label :birth_month, '生年月日_月' %>
-    <%= f.text_field :birth_month, value: @account.birth_month, disabled: true %>
-    <%= f.label :birth_day, '生年月日_日' %>
-    <%= f.text_field :birth_day, value: @account.birth_day, disabled: true %>
+    <%= f.label :birth, '生年月日' %>
+    <%= f.text_field :birth, value: @account.birth, disabled: true %>
     <%= f.label :valid_start_date, '有効開始日' %>
     <%= f.text_field :valid_start_date, value: @account.valid_start_date, disabled: true %>
     <%= f.label :valid_end_date, '終了日' %>

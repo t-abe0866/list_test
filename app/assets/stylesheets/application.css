@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+/*
  .account_id {
     position   : relative;
   }
@@ -40,4 +40,4 @@
     overflow:hidden;
     text-overflow:ellipsis;
   }
-  
+  */
